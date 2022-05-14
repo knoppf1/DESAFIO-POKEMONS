@@ -1,0 +1,63 @@
+<div class="container-fluid flex-grow-1 container-p-y">
+
+  <div class="card-body" [formGroup]="frmForm" >
+
+    <div class="row justify-content-between">
+      <div class="col-6">
+        <div class="titulo">
+          Explore o mundo dos <span class="titulo-palavra">Pokémons</span>
+        </div>
+        <div class="sub-titulo">
+          Descubra todas as espécies de Pokémons
+        </div>
+
+        <div class="form-row" >
+          <div class= "row" >
+            <div class="form-group col-md-6 col-sm-8">
+              <input type="text" class="form-control" id="nome"
+              formControlName="nome" autofocus="true">
+            </div>
+            <div class="form-group col-md-4 col-sm-4 ">
+              <button class="btn btn-outline-success btn-buscar" type="submit" (click)="loadpokemon()">Buscar</button>
+            </div>
+          </div>
+
+
+          <!-- <div class="form-group col-md-6 col-sm-12" >
+            <label class="form-label">Pokémon:</label>
+            <select class="form-control select-custom" formControlName="nome" id="nome" >
+                <option value="" >Selecione um Pokémon...</option>
+
+                <option *ngFor="let itens of nomes" [value]="itens"> {{itens}} </option>
+            </select>
+            <div class="form-group col-md-4 col-sm-4">
+              <button class="btn btn-outline-success" type="submit" (click)="loadpokemon()">Buscar</button>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+
+      <div class="col-6 card-cadatro" *ngIf="pokemon.lenght != 0" >
+        <app-cadastro [pokemon]="pokemon"></app-cadastro>
+      </div>
+    </div>
+
+    <div class="sub-titulo">
+      Mais procurados
+    </div>
+
+    <div class= "row" >
+      <div class="col-3 card-cadatro" *ngFor="let favorito of favoritos"  >
+        <app-cadastro [pokemon]="favorito"></app-cadastro>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
