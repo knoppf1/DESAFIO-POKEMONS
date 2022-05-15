@@ -2,7 +2,7 @@
 
   <div class="card-body" [formGroup]="frmForm" >
 
-    <div class="row justify-content-between">
+    <div class="row justify-content-between card-superior">
       <div class="col-6">
         <div class="titulo">
           Explore o mundo dos <span class="titulo-palavra">Pokémons</span>
@@ -38,10 +38,11 @@
         </div>
       </div>
 
-      <div class="col-6 card-cadatro" *ngIf="pokemon.lenght != 0" >
-        <app-cadastro [pokemon]="pokemon"></app-cadastro>
+      <div class="col-6 card-cadatro" *ngIf="pokemon.lenght != 0" [routerLink]="['view']" >
+        <app-cadastro [pokemon]="pokemon" ></app-cadastro>
       </div>
     </div>
+
 
     <div class="sub-titulo">
       Mais procurados

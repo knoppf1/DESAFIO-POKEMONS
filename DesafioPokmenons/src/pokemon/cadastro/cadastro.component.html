@@ -1,7 +1,7 @@
 
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
+<div class="card card-cadastro" style="width: 18rem;" [routerLink]="['/view', pokemon.id]">
+  <div class="card-body" >
     <h5 class="card-cadastro-title">{{pokemon.name}}</h5>
   </div>
   <img src="{{pokemon.sprites.front_default}}" class="card-img-top" alt="...">
@@ -9,6 +9,7 @@
     <li class="list-group-item card-cadastro-item">Altura: {{pokemon.height}} cm</li>
     <li class="list-group-item card-cadastro-item">Peso: {{pokemon.weight}} Kg</li>
   </ul>
+
 </div>
 
 

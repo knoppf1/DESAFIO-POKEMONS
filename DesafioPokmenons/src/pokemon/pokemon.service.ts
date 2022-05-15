@@ -24,4 +24,9 @@ export class PokemonService {
     tap((cadastros: any) =>console.log('Res lista cadastros', cadastros))
   );
   }
+
+  buscar(id: number):Observable<any> {return this.http.get(this.apiUrl + id).pipe(
+    tap((cadastros: any) =>console.log('Res lista cadastros', cadastros))
+  );
+  }
 }
