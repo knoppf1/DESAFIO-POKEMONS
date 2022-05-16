@@ -7,17 +7,19 @@
           {{pokemon.name}}
         </div>
 
-        <div class="col-12 codigo">
-          <div class="col-6 " >
+        <div class="row justify-content-center codigo">
+          <div class="col-4 ">
             Cod: #{{pokemon.id}}
           </div>
-          <div class="col-3 " >
+          <div class="col-4">
             Tipo:
           </div>
-          <!-- <div class="col-3 " >
-            Cod: #{{pokemon.types.type.name}}
-          </div> -->
+          <div class="col-4">
+            <!-- {{pokemon.types.type.name}} -->
+          </div>
         </div>
+
+
 
         <div class=" col-12 descricao">
           Descrição:
@@ -29,6 +31,20 @@
           <img src="{{pokemon.sprites.front_default}}" class="card-img-top" alt="...">
         </div>
       </div>
+
+
     </div>
+
+    <div class="sub-titulo">
+      Mais procurados
+    </div>
+
+    <div class= "row"  >
+
+      <div class="col-3 card-cadatro" *ngFor="let favorito of favoritos"  >
+        <app-cadastro [pokemon]="favorito"></app-cadastro>
+      </div>
+    </div>
+
   </div>
 </div>

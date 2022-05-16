@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PokemonService } from '../pokemon.service';
 
@@ -9,8 +9,8 @@ import { PokemonService } from '../pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
   itens: any[] = [];
-  favoritos: any[] = [];
-  results: any[] = [];
+  @Input() favoritos: any[] = [];
+  results:  any[] = [];
   nomes: any[] = [];
   pokemon: any;
   frmForm: FormGroup;
@@ -34,7 +34,7 @@ export class PokemonListComponent implements OnInit {
   load(){
 
     this.pokemonService.listar().subscribe((res)=>{
-      this.itens=res;
+      this.itens=res.results;
       console.log('This itens', this.itens);
       // for (var x in this.itens){
       //   this.nomes.push(this.itens[x].name)
@@ -49,6 +49,8 @@ export class PokemonListComponent implements OnInit {
     const nome = this.frmForm.value.nome;
     this.pokemonService.listarpokemon(nome).subscribe((res)=>{
       this.pokemon=res;
+
+
       this.favoritos.push(res);
       console.log('Res Pokemon', this.itens)
       console.log('favoritos', this.favoritos)

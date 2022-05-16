@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Pokemon } from './../model/Pokemon';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-pokemon-view',
   templateUrl: './pokemon-view.component.html',
-  styleUrls: ['./pokemon-view.component.scss']
+  styleUrls: ['./pokemon-view.component.scss'],
+  // <Pokemon [favoritos] = 'favoritos'></Pokemon>
 })
 export class PokemonViewComponent implements OnInit {
   id: number;
   itens: any[] = [];
   results: any[] = [];
   pokemon: any;
+  @Input() favoritos: any[];
 
   constructor(
     private pokemonService: PokemonService,
@@ -23,6 +26,7 @@ export class PokemonViewComponent implements OnInit {
     this.id = +this.route.snapshot.paramMap.get('id')!;
     // this.load();
     this.loadpokemon();
+    console.log('favoritos 1', this.favoritos)
   }
 
   load(){

@@ -28,12 +28,15 @@
             <select class="form-control select-custom" formControlName="nome" id="nome" >
                 <option value="" >Selecione um Pokémon...</option>
 
-                <option *ngFor="let itens of nomes" [value]="itens"> {{itens}} </option>
+                <option *ngFor="let item of itens" [value]="item.name"  > {{item.name}} </option>
             </select>
             <div class="form-group col-md-4 col-sm-4">
               <button class="btn btn-outline-success" type="submit" (click)="loadpokemon()">Buscar</button>
             </div>
           </div> -->
+
+
+
 
         </div>
       </div>

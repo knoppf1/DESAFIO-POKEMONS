@@ -7,10 +7,6 @@ export class Pokemon
   sprites!:{
     front_default:string
   };
-  types!:{
-    type:{
-      name:string
-    }
-    };
+  types:Array<[]>;
 
 }
