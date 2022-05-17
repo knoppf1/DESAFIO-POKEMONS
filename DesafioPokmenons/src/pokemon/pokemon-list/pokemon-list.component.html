@@ -44,15 +44,10 @@
 
 
     <div class="sub-titulo">
-      Mais procurados
+      Mais procurados:
       <app-procurado [favoritos]="favoritos"></app-procurado>
     </div>
 
-    <div class= "row" >
-      <div class="col-3 card-cadatro" *ngFor="let favorito of favoritos"  >
-        <app-cadastro [pokemon]="favorito"></app-cadastro>
-      </div>
-    </div>
   </div>
 </div>
 

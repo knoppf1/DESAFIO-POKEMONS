@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./procurado.component.scss']
 })
 export class ProcuradoComponent implements OnInit {
+
   @Input() favoritos: any[];
 
   constructor() { }

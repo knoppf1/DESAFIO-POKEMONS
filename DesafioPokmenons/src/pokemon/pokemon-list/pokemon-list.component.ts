@@ -50,8 +50,6 @@ export class PokemonListComponent implements OnInit {
     const nome = this.frmForm.value.nome;
     this.pokemonService.listarpokemon(nome).subscribe((res)=>{
       this.pokemon=res;
-
-
       this.favoritos.push(res);
       console.log('Res Pokemon', this.itens)
       console.log('favoritos', this.favoritos)

@@ -19,8 +19,6 @@
           </div>
         </div>
 
-
-
         <div class=" col-12 descricao">
           Descrição:
         </div>
@@ -31,19 +29,12 @@
           <img src="{{pokemon.sprites.front_default}}" class="card-img-top" alt="...">
         </div>
       </div>
-
-
     </div>
 
+    <!-- Deveria recarregar os favoritos -->
     <div class="sub-titulo">
-      Mais procurados
-    </div>
-
-    <div class= "row"  >
-
-      <div class="col-3 card-cadatro" *ngFor="let favorito of favoritos"  >
-        <app-cadastro [pokemon]="favorito"></app-cadastro>
-      </div>
+      Mais procurados:
+      <app-procurado [favoritos]="favoritos"></app-procurado>
     </div>
 
   </div>
