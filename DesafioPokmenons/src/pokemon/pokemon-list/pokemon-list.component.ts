@@ -9,7 +9,7 @@ import { PokemonService } from '../pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
   itens: any[] = [];
-  @Input() favoritos: any[] = [];
+  @Output() favoritos: any[] = [];
   results:  any[] = [];
   nomes: any[] = [];
   pokemon: any;
