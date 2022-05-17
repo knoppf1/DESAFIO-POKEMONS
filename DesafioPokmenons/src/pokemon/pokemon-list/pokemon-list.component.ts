@@ -11,7 +11,7 @@ export class PokemonListComponent implements OnInit {
   itens: any[] = [];
   @Output() favoritos: any[] = [];
   results:  any[] = [];
-  nomes: any[] = [];
+  nomes: any = [];
   pokemon: any;
   frmForm: FormGroup;
 
@@ -32,18 +32,17 @@ export class PokemonListComponent implements OnInit {
  }
 
   load(){
+    this.nomes= { nome: [], url:[] };
     this.pokemonService.listar().subscribe((res)=>{
       this.itens=res.results;
-
       console.log('This itens', this.itens);
-      // for (var x in this.itens){
-      //   this.nomes.push(this.itens[x].name)
-
-      // }
+      this.itens.forEach(results => {
+        this.nomes.nome.push(results.name)
+      });
 
     })
-    // console.log('Nomes1', this.nomes);
-    // return this.nomes;
+    console.log('Nomes1', this.nomes.nome);
+    return this.nomes;
   }
 
   loadpokemon(){
