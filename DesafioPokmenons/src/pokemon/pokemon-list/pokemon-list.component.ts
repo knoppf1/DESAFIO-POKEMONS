@@ -27,17 +27,18 @@ export class PokemonListComponent implements OnInit {
 
   createForm(): FormGroup {
     return this.fb.group({
-     nome : ['',Validators.required],
+     nome : [''],
     });
  }
 
   load(){
-
     this.pokemonService.listar().subscribe((res)=>{
       this.itens=res.results;
+
       console.log('This itens', this.itens);
       // for (var x in this.itens){
       //   this.nomes.push(this.itens[x].name)
+
       // }
 
     })
